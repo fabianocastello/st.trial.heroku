@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import time
 import socket
-st.title('My first app @ heroku')
+st.title('My first app @ heroku 2')
 st.write("socket:", socket.gethostname())
 
 st.write("Here's our first attempt at using data to create a table:")

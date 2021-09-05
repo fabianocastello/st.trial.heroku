@@ -10,7 +10,6 @@ import os
 st.title('My first app @ heroku 4')
 st.write("socket:", socket.gethostname())
 
-provided_ips = request.headers.getlist("X-Forwarded-For")
 # The first entry in the list should be the client's IP.
  
 ################
@@ -25,6 +24,7 @@ def get_my_ip():
     return jsonify({'ip': request.remote_addr}), 200
 
 x = get_my_ip()
+provided_ips = request.headers.getlist("X-Forwarded-For")
 
 ###############
 
@@ -38,6 +38,7 @@ st.write(t2)
 st.write(t3)
 st.write(t4)
 st.write(x)
+st.write(provided_ips)
 
 st.write("Here's our first attempt at using data to create a table:")
 st.write(pd.DataFrame({

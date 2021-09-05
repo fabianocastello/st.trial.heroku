@@ -23,8 +23,8 @@ from flask import jsonify
 # def get_my_ip():
     # return jsonify({'ip': request.remote_addr}), 200
 
-x = 'teste'#get_my_ip()
-provided_ips = request.headers.getlist("X-Forwarded-For")
+# x = 'teste'#get_my_ip()
+# x = provided_ips = request.headers.getlist("X-Forwarded-For")
 
 ###############
 
@@ -37,8 +37,8 @@ st.write(t1)
 st.write(t2)
 st.write(t3)
 st.write(t4)
-st.write(x)
-st.write(provided_ips)
+# st.write(x)
+# st.write(provided_ips)
 
 st.write("Here's our first attempt at using data to create a table:")
 st.write(pd.DataFrame({

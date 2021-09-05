@@ -41,9 +41,9 @@ def query_example1():
     return ip
 
 
-from werkzeug.contrib.fixers import ProxyFix
-# [ ... ]
-app.wsgi_app = ProxyFix(app.wsgi_app)
+# from werkzeug.contrib.fixers import ProxyFix
+[ ... ]
+# app.wsgi_app = ProxyFix(app.wsgi_app)
 
 # (don't just copy/paste this -- keep reading)
 

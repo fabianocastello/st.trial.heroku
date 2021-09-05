@@ -16,8 +16,11 @@ st.write("socket:", socket.gethostname())
 # from flask import request
 # x = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
 
+from flask import Flask
 from flask import request
 from flask import jsonify
+
+app = Flask(__name__)
 
 @app.route("/get_my_ip", methods=["GET"])
 def get_my_ip():

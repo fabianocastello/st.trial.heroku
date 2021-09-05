@@ -19,11 +19,11 @@ st.write("socket:", socket.gethostname())
 from flask import request
 from flask import jsonify
 
-#@app.route("/get_my_ip", methods=["GET"])
-def get_my_ip():
-    return jsonify({'ip': request.remote_addr}), 200
+@app.route("/get_my_ip", methods=["GET"])
+# def get_my_ip():
+    # return jsonify({'ip': request.remote_addr}), 200
 
-x = get_my_ip()
+x = 'teste'#get_my_ip()
 provided_ips = request.headers.getlist("X-Forwarded-For")
 
 ###############

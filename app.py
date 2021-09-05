@@ -5,6 +5,8 @@ import numpy as np
 import pandas as pd
 import time
 import socket
+import os
+
 st.title('My first app @ heroku 4')
 st.write("socket:", socket.gethostname())
 
@@ -12,11 +14,15 @@ t1 = os.environ['teste']
 t2 = os.environ['another']
 t3 = os.environ['another2']
 t4 = os.environ['another3']
+ip1 = os.environ['REMOTE_ADDR']
+ip2 = os.environ['HTTP_X_FORWARDED_FOR']
 
 st.write(t1)
 st.write(t2)
 st.write(t3)
 st.write(t4)
+st.write(ip1)
+st.write(ip2)
 
 st.write("Here's our first attempt at using data to create a table:")
 st.write(pd.DataFrame({

@@ -33,7 +33,7 @@ def query_example():
 #provided_ips = request.headers.getlist("X-Forwarded-For")
 
 @app.route('/q1')
-def query_example():
+def query_example1():
     if not request.headers.getlist("X-Forwarded-For"):
        ip = request.remote_addr
     else:

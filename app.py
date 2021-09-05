@@ -25,9 +25,29 @@ app = Flask(__name__)
 @app.route("/get_my_ip", methods=["GET"])
 def get_my_ip():
      return jsonify({'ip': request.remote_addr}), 200
-
+     
+@app.route('/q')
+def query_example():
+    return 'Query String Example'
 # x = 'teste'#get_my_ip()
 #provided_ips = request.headers.getlist("X-Forwarded-For")
+
+@app.route('/q1')
+def query_example():
+    if not request.headers.getlist("X-Forwarded-For"):
+       ip = request.remote_addr
+    else:
+       ip = request.headers.getlist("X-Forwarded-For")[0]
+    return ip
+
+
+from werkzeug.contrib.fixers import ProxyFix
+# [ ... ]
+app.wsgi_app = ProxyFix(app.wsgi_app)
+
+# (don't just copy/paste this -- keep reading)
+
+
 
 ###############
 
